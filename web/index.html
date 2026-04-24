@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>一米八消费者调研｜人群报告查询</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <section class="sidebar-section core-panel">
+        <h1>人群分析</h1>
+        <p class="sidebar-desc">选择核心人群查看固定报告；或使用下方筛选进入自助查询</p>
+
+        <div class="filter-group">
+          <label for="coreGroupFilter">核心人群报告</label>
+          <select id="coreGroupFilter">
+            <option value="">加载中...</option>
+          </select>
+        </div>
+
+        <div class="core-group-note" id="coreGroupNote">
+          正在读取人群报告目录...
+        </div>
+      </section>
+
+      <section class="sidebar-section query-panel">
+        <h2>调研数据自助查询</h2>
+        <p class="sidebar-desc compact">手动修改任意筛选项后，进入自助查询状态；右侧展示前端聚合统计。</p>
+
+        <div class="filter-group">
+          <label for="regionFilter">区域</label>
+          <select id="regionFilter">
+            <option value="">全部</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="provinceFilter">省份</label>
+          <select id="provinceFilter">
+            <option value="">全部</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="ageFilter">年龄</label>
+          <select id="ageFilter">
+            <option value="">全部</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="incomeFilter">年收入</label>
+          <select id="incomeFilter">
+            <option value="">全部</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="familyFilter">家庭结构</label>
+          <select id="familyFilter">
+            <option value="">全部</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="frequencyFilter">水产品消费频率</label>
+          <select id="frequencyFilter">
+            <option value="">全部</option>
+          </select>
+        </div>
+
+        <button id="resetBtn" class="reset-btn">重置自助查询筛选</button>
+      </section>
+    </aside>
+
+    <main class="main">
+      <section class="summary">
+        <div class="card">
+          <div class="card-title">当前样本数</div>
+          <div class="card-value" id="sampleCount">-</div>
+        </div>
+        <div class="card">
+          <div class="card-title">占总体比例</div>
+          <div class="card-value" id="sampleRatio">-</div>
+        </div>
+        <div class="card">
+          <div class="card-title">当前筛选条件</div>
+          <div class="card-text" id="activeFilters">加载中...</div>
+        </div>
+      </section>
+
+      <section class="insights card full-width">
+        <div class="section-heading">
+          <h2>基础画像</h2>
+          <span class="section-subtitle">基于当前筛选后的 JSON 明细实时计算</span>
+        </div>
+        <div id="profileSummary" class="profile-grid">加载中...</div>
+      </section>
+
+      <section class="insights card full-width">
+        <div class="section-heading with-control">
+          <div>
+            <h2>场景分析</h2>
+            <span class="section-subtitle" id="reportStatus">加载中...</span>
+          </div>
+          <div class="scene-control">
+            <label for="sceneFilter">查看模块</label>
+            <select id="sceneFilter">
+              <option value="summary">总结</option>
+              <option value="dailyDecision">日常购买决策场景</option>
+              <option value="productPreference">品类 / 产品形态偏好</option>
+              <option value="firstPurchase">首购场景</option>
+              <option value="offline">线下场景</option>
+              <option value="media">新媒体场景</option>
+              <option value="processedFood">加工品专项</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="sceneContent" class="report-content">加载中...</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
